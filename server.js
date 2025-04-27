@@ -5,6 +5,12 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('✅ USDT.s Price API is live. Visit /price to get the current price.');
+});
+
+// Price endpoint
 app.get('/price', (req, res) => {
   res.json({
     token: "USDT.s",
